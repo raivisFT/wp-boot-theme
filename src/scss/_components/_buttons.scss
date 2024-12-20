@@ -88,3 +88,15 @@
 		}
 	}
 }
+
+.btn__cart {
+	background-image: none;
+	padding-left: 10px;
+
+	&:hover {
+	
+		svg g path {
+			stroke: $white;
+		}
+	}
+}

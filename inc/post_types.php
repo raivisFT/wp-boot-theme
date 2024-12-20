@@ -4,26 +4,30 @@
  */
 
 //////////////////////////////////////////////////////////////////
-// Custom Post type locations - PHP Templates + Shortcodes
+// Custom Post type Components - PHP Templates + Shortcodes
 //////////////////////////////////////////////////////////////////
-function create_post_type_locations() {
-	register_taxonomy_for_object_type('category', 'locations'); // Register Taxonomies for Category
-	register_taxonomy_for_object_type('post_tag', 'locations');
-	register_post_type('locations',
+
+function create_post_type_components() {
+
+	register_taxonomy_for_object_type('category', 'components'); // Register Taxonomies for Category
+
+	register_taxonomy_for_object_type('post_tag', 'components');
+
+	register_post_type('components',
 		array(
 		'labels' => array(
-			'name' => __('Filiales', 'freetimers'),
-			'singular_name' => __('locations', 'freetimers'),
-			'add_new' => __('Add New', 'freetimers'),
-			'add_new_item' => __('Add New locations Post', 'freetimers'),
-			'edit' => __('Edit', 'freetimers'),
-			'edit_item' => __('Edit locations Post', 'freetimers'),
-			'new_item' => __('New locations Post', 'freetimers'),
-			'view' => __('View locations Post', 'freetimers'),
-			'view_item' => __('View locations Post', 'freetimers'),
-			'search_items' => __('Search locations Post', 'freetimers'),
-			'not_found' => __('No locations Posts found', 'freetimers'),
-			'not_found_in_trash' => __('No locations Posts found in Trash', 'freetimers')
+			'name' => __('Components', 'wp'),
+			'singular_name' => __('component', 'wp'),
+			'add_new' => __('Add New', 'wp'),
+			'add_new_item' => __('Add New component Post', 'wp'),
+			'edit' => __('Edit', 'wp'),
+			'edit_item' => __('Edit component Post', 'wp'),
+			'new_item' => __('New component Post', 'wp'),
+			'view' => __('View component Post', 'wp'),
+			'view_item' => __('View component Post', 'wp'),
+			'search_items' => __('Search component Post', 'wp'),
+			'not_found' => __('No component Posts found', 'wp'),
+			'not_found_in_trash' => __('No component Posts found in Trash', 'wp')
 		),
 		'hierarchical' => true,
 		'publicly_queryable' => true,
@@ -44,4 +48,4 @@ function create_post_type_locations() {
 		'taxonomies' => array('post_tag','category')
 	));
 }
-add_action('init', 'create_post_type_locations');
+// add_action('init', 'create_post_type_components'); => only if need specific large reusable sections

@@ -1,34 +1,34 @@
 @keyframes fade-in {
-		to {
-			opacity: 1;
+	to {
+		opacity: 1;
+	}
+}
+
+.animate {
+	visibility: hidden;
+
+	&-animated {
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		visibility: visible;
+	}
+
+	&--fade-in {
+		opacity: 0;
+
+		&.animate-animated {
+			animation-name: fade-in;
 		}
 	}
-	
-	.animate {
-		visibility: hidden;
-	
-		&-animated {
-			animation-duration: 0.5s;
-			animation-fill-mode: forwards;
-			visibility: visible;
-		}
-	
-		&--fade-in {
-			opacity: 0;
-	
-			&.animate-animated {
-				animation-name: fade-in;
-			}
-		}
-	
-		&-delay- {
-			@for $i from 1 through 20 {
-				&#{$i} {
-					animation-delay: 0.1s * $i;
-				}
+
+	&-delay- {
+		@for $i from 1 through 20 {
+			&#{$i} {
+				animation-delay: 0.1s * $i;
 			}
 		}
 	}
+}
 
 // For any animation
 @mixin keyframes($name) {

@@ -1,0 +1,11 @@
+@each $key, $colour in $colours {
+	.txt-#{$key} {
+		color: $colour !important;
+		
+		@each $o, $pacity in $opacities{
+			&-#{$o} {
+				color: rgba($colour, $pacity) !important;
+			}
+		}
+	}
+}
