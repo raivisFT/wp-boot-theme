@@ -1,0 +1,33 @@
+{
+	"name": "wp-base",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "vite build --watch",
+		"watch": "yarn dev",
+		"start": "yarn dev",
+		"build": "vite build",
+		"prod": "yarn build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Freetimers-Developers"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Freetimers-Developers/issues"
+	},
+	"homepage": "https://github.com/Freetimers-Developers#readme",
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"sass": "^1.80.3",
+		"vite": "^5.4.6"
+	},
+	"targets": {
+		"default": {
+			"distDir": "./dist"
+		}
+	}
+}

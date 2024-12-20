@@ -1,0 +1,23 @@
+{
+    "name": "freetimers/freetimers",
+    "description": "The starting point base theme for Freetimers Wordpress projects",
+    "type": "wordpress-theme",
+    "authors": [{
+        "name": "Raivis Kalnins",
+        "email": "raivis.kalnins@freetimers.com"
+    }],
+    "require": {
+        "stoutlogic/acf-builder": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "CABALLERO\\": "inc/"
+        },
+        "files": ["inc/acf.php"]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
