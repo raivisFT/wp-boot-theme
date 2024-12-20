@@ -1,0 +1,49 @@
+body {
+
+	&.dark-theme {
+		background-color: var(--bg-color);
+		--bg-color: #{$text-base}; 
+		
+		.site-header {
+			background-color: var(--bg-color);
+
+			&.onScroll {
+
+				&:after,
+				&:before {
+					content: "";
+					background-color: var(--bg-color);
+				}
+			}
+
+			li ul {
+				background-color: var(--bg-color) !important;
+			}
+
+			p,
+			a {
+				color: var(--text-color-base);
+			}
+		}
+
+		.site-footer {
+			background-color: var(--primary-color);
+
+			p,
+			a {
+				color: var(--text-color-base) !important;
+			}
+
+			.foo {
+
+				&__contacts {
+					background-color: var(--text-color-dark) !important;
+				}
+
+				&__copy {
+					background-color: var(--base-color-black) !important;
+				}
+			}
+		}
+	}
+}

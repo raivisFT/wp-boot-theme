@@ -1,0 +1,13 @@
+<svg width="32" height="33" class="wc-block-mini-cart__icon" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_621_4362)">
+<path d="M23.5 23.3521H11.3962C10.9279 23.352 10.4744 23.1875 10.1148 22.8874C9.75527 22.5872 9.51247 22.1704 9.42875 21.7096L6.09125 3.35205H3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.5 28.3521C12.8807 28.3521 14 27.2328 14 25.8521C14 24.4713 12.8807 23.3521 11.5 23.3521C10.1193 23.3521 9 24.4713 9 25.8521C9 27.2328 10.1193 28.3521 11.5 28.3521Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.5 28.3521C24.8807 28.3521 26 27.2328 26 25.8521C26 24.4713 24.8807 23.3521 23.5 23.3521C22.1193 23.3521 21 24.4713 21 25.8521C21 27.2328 22.1193 28.3521 23.5 28.3521Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.81875 18.3521H24.5125C24.9809 18.352 25.4344 18.1875 25.7939 17.8874C26.1535 17.5872 26.3963 17.1704 26.48 16.7096L28 8.35205H7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_621_4362">
+<rect width="32" height="32" fill="white" transform="translate(0 0.352051)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,949 @@
+body {
+
+	#main .woocommerce-notices-wrapper {
+		display: none !important;
+	}
+
+	form.variations_form {
+		margin-bottom: 0 !important;
+
+		table.variations {
+			width: 100%;
+
+			tr {
+				margin-bottom: 20px;
+
+				&:first-child,
+				&:last-child {
+
+					th {
+						padding-top: 0;
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 5px;
+				}
+			}
+
+			th {
+				//padding-top: 20px;
+				display: block;
+				width: 100%;
+
+				label[for=pa_pay-monthly-or-yearly],
+				label[for=pa_area] {
+					display: none;
+				}
+			}
+
+			td {
+
+				&.attribute_pa_pay-monthly-or-yearly {
+					font-size: 0;
+					line-height: 0;
+				}
+
+				div#attribute_pa_pay-monthly-or-yearly {
+					display: none;
+				}
+
+				a.reset_variations {
+					font-size: 12px !important;
+					border: $orange solid 1px;
+					text-transform: uppercase;
+					border-radius: 4px;
+					position: absolute;
+					line-height: 0;
+					color: $orange;
+					padding: 10px;
+    				height: 20px;
+					right: 0;
+    				top: 0;
+					display: none !important;
+				}
+
+				select,
+				#pa_color {
+					display: none !important;	
+				}
+
+				input[type="radio"] {
+					background-color: var(--form-background);
+					border: 1px solid currentColor;
+					transform: translateY(-0.075em);
+					-webkit-appearance: none;
+					place-content: center;
+					color: currentColor;
+					margin: 7px 10px 0 0;
+					border-radius: 50%;
+					appearance: none;
+					cursor: pointer;
+					height: 1.15em;
+					width: 1.15em;					
+					display: grid;
+					font: inherit;
+					float: left;			
+				  
+					&::before {
+						content: "";
+						box-shadow: inset 1em 1em var(--form-control-color);
+						transition: 120ms transform ease-in-out;
+						background-color: $orange;
+						transform: scale(0);
+						border-radius: 50%;
+						height: 0.65em;
+						width: 0.65em;
+					}
+					
+					&:checked::before {
+						transform: scale(1);
+					}
+
+					&:focus {
+						outline: max(2px,2px) solid rgba($orange,0.4);
+						//outline-offset: max(2px, 0.15em);
+					}
+				}
+
+				label {
+					font-weight: $font-weight-normal !important;
+					display: inline-block;
+					margin-bottom: 7px;					
+				}
+
+				#attribute_pa_quantity {
+
+					&-1 + label::after {
+						content:' - Single Membership';
+					}
+
+					&-2 + label::after {
+						content:' - Joint Membership';
+					}
+
+					&-3 + label::after {
+						content:' - Family Membership';
+					}
+
+					&-4 + label::after {
+						content:' - Family Membership';
+					}
+
+					&-4 + label a.free {
+						background: #a5eba8;
+						position: relative;
+						border-radius: 4px;
+						padding: 0 15px;
+						margin-left: 15px;
+						color: #206623;
+						font-size: 14px;
+						float: right;
+					}
+				}
+			}
+		}
+	}
+
+	&.woocommerce {
+
+		&-account .wp-block-post-title, 
+		&-account main .woocommerce, 
+		&-cart .wp-block-post-title, 
+		&-cart main .woocommerce, 
+		&-checkout .wp-block-post-title, 
+		&-checkout main .woocommerce {
+			max-width: $container-width;
+		}
+
+		&-cart,
+		&-checkout {
+		
+			main .woocommerce {
+				background: #FAFAFA 0% 0% no-repeat padding-box;
+				box-shadow: 0px 15px 30px #1A264A26;
+				margin: 200px auto 100px auto;
+				border-radius: 14px;
+				padding: 80px;
+
+				.cart-collaterals {
+					display: inline-block;
+		
+					.cart_totals {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.quantity {
+			position: relative;
+			margin: 0;
+
+			i {
+				transform: translateY(-50%);
+				font-family: $body-font;
+				font-style: normal;
+				position: absolute;
+				font-weight: $font-weight-bold;
+				font-size: 20px;
+				cursor: pointer;
+				display: block;
+				color: $text-base;
+				width: 20x;
+				top: 50%;
+
+				&#q {
+
+					&-minus {
+						left: 20px;
+					}
+
+					&-plus {
+						right: 24px;
+					}
+				}
+			}
+			
+			input[type=number] {
+				background: #F5F5F5 0% 0% no-repeat padding-box;
+				border: 0 !important;
+				border-radius: 35px;
+				width: fit-content;
+				text-align: center;
+				padding: 15px 55px;
+				font-weight: $font-weight-bold;
+				font-size: 16px;
+
+				&:focus {
+					outline: $text-base solid 1px;
+				}
+			}
+		}
+
+		.wc-block-components-quantity-selector {
+			background: #F5F5F5 0% 0% no-repeat padding-box;
+			border: 0 !important;
+			border-radius: 35px;
+			text-align: center;
+			font-weight: $font-weight-bold;
+			font-size: 16px;
+
+			&::after {
+				content: unset;
+			}
+
+			&__button:focus {
+				outline: unset;
+				box-shadow: none;
+			}
+		}
+	}
+
+	&.single-product {
+
+		.woocommerce {
+		
+			&-product-gallery {
+				margin-right: 40px;
+				width: 94% !important;
+
+				@include media-breakpoint-down(lg) {
+					width: 100% !important;
+				}
+
+				&__trigger {
+					display: none !important;
+				}
+			}
+
+			&__prize-details,
+			&__competition-details {
+				background-color: $text-base;
+				margin-bottom: 100px;
+				border-radius: 17px;
+				padding: 60px;
+
+
+				@include media-breakpoint-down(lg) {
+					padding: 40px 30px;
+				}
+
+				h2,
+				h3 {
+
+					del,
+					em,
+					s {
+						text-decoration: none;
+						font-style: normal;
+						color: $text-base;
+					}
+				}
+
+				p {
+
+					strong,
+					b {
+						font-weight: 800;
+					}
+
+					a {
+						transition: all .3s ease-out;
+						color: $text-base;
+
+						&:hover {
+							transition: all .3s ease-out;
+							color: rgba($text-base, 0.7);
+						}
+					}
+				}
+
+				ul {
+					padding-left: 15px;
+				}
+			}
+
+			&-tabs {
+
+				.tabs {
+					padding-left: 5px !important;
+					margin-bottom: 0 !important;
+					border: 0;
+
+					&::before,
+					&::after {
+						content: unset !important;
+					}
+
+					li {
+						padding-left: 0 !important;
+						border: 0!important;
+
+						&::before,
+						&::after {
+							content: unset !important;
+						}
+
+						a {
+							color: $text-base !important;
+						}
+					}
+				}
+
+				.panel {
+					padding-left: 30px;
+
+					h2 {
+						display: none !important;
+					}
+
+					table {
+
+						thead {
+
+							tr {
+
+								th {
+									padding-right: 30px;
+									font-size: 14px;
+								}
+							}
+						}
+
+						tbody {
+
+							tr {
+
+								td {
+									padding-right: 30px;
+									font-size: 14px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&-variation-add-to-cart {
+
+				.quantity {
+					display: none !important;
+				}
+
+				button.single_add_to_cart_button {
+					background-color: $text-base !important;
+					margin-top: -10px !important;
+					border: #afa6a2 solid 4px;					
+					transition: all .3s ease-out;
+					border-radius: 10px;					
+					color: $white;
+
+					&:hover {
+						box-shadow: none;
+						color: $white;
+						opacity: 0.7;
+					}
+				}
+			}
+
+			.back-to-shop--link {
+				text-decoration: none;
+				width: fit-content;
+				position: relative;
+				font-weight: $font-weight-bold;
+				margin-left: -15px;
+				overflow: hidden;
+    			padding-left: 0;
+				font-size: 20px;
+				color: $orange;
+
+				&::before {
+					content: '';
+					background: url('../../assets/img/svg/arr-back.svg') left center / 100% no-repeat;
+					margin-right: 0;
+					position: relative;
+					display: block;
+					height: 100%;		
+					float: left;	
+					width: 30px;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					border-top: $orange solid 1px;
+					width: calc(100% - 40px);
+					margin-left: 30px;
+					display: block;
+					height: 0;
+					bottom: 0;
+				}
+
+				&:hover {					
+					opacity: 0.7;
+				}
+			}
+		}
+
+		.wp-block-tfa-row-section.container-boxed.wp-block-woocommerce-single-product {
+
+			@include media-breakpoint-down(sm) {
+				padding: 50px 0 !important;
+
+				.wp-block-spacer {
+					max-height: 20px;
+				}
+			}
+
+			.wc-block--included-services {
+				
+				&__content {
+
+					.inc-serv__item {
+
+						@include media-breakpoint-down(sm) {
+							padding: 12px !important;
+						}
+
+						span {
+							
+							@include media-breakpoint-down(sm) {
+								line-height: 1.1;
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+
+			button.single_add_to_cart_button {
+
+				@include media-breakpoint-down(sm) {
+					margin-top: 15px !important;
+					width: 100%;
+				}
+			}
+		}
+
+		.wp-block-tfa-column.col-lg-5 {
+
+			@include media-breakpoint-down(sm) {
+				padding: 30px !important;
+				position: relative;
+    			margin-top: 50px;
+			}
+		}
+
+		.wp-block-woocommerce-product-price {
+			font-weight: $font-weight-bold !important;
+			font-size: 44px !important;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;			
+
+			@include media-breakpoint-down(xl) {
+				line-height: 1.3 !important;
+				font-size: 32px !important;				
+			}
+
+			.woocommerce-Price-currencySymbol,
+			.woocommerce-Price-amount,
+			bdi {
+				font-weight: $font-weight-bold !important;
+				font-size: 44px !important;
+
+				@include media-breakpoint-down(xl) {
+					line-height: 1.3 !important;
+					font-size: 32px !important;
+				}
+			}
+		}
+
+		.wp-block-post {
+		
+			&-excerpt,
+			&-content {
+				margin-top: 0 !important;
+				max-width: 925px;
+			}
+		}
+
+		.wp-block-tfa-row-section.section__back-to-shop .wp-block-tfa-row-section.container-boxed {
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 5px !important;
+			}
+		}
+
+	}
+
+	&.product_cat-cars {
+
+		form.variations_form table.variations td #attribute_pa_quantity {
+
+			&-1 + label::after {
+				content:' Vehicle - Single Membership';
+			}
+
+			&-2 + label::after {
+				content:' Vehicle - Joint Membership';
+			}
+
+			&-3 + label::after {
+				content:' Vehicle - Family Membership';
+			}
+
+			&-4 + label::after {
+				content:' Vehicle - Family Membership';
+			}
+		}
+	}
+
+	&.product_cat-motorbikes {
+
+		form.variations_form table.variations td #attribute_pa_quantity {
+
+			&-1 + label::after {
+				content:' Motorbike - Single Membership';
+			}
+
+			&-2 + label::after {
+				content:' Motorbike - Joint Membership';
+			}
+
+			&-3 + label::after {
+				content:' Motorbike - Family Membership';
+			}
+
+			&-4 + label::after {
+				content:' Motorbike - Family Membership';
+			}
+		}
+	}
+
+	.single_variation_wrap {
+
+		.quantity {
+			display: none !important;
+		}
+
+		bdi,
+		bdi span {
+			font-weight: $font-weight-bold !important;
+			font-size: 44px !important;
+			color: $text-base;
+
+			@include media-breakpoint-down(lg) {
+				font-size: 32px !important;
+			}
+		}
+	}
+
+	&.woocommerce-account {
+
+		main .woocommerce {
+			max-width: 100%;
+		}
+
+		nav.woocommerce-MyAccount-navigation {
+
+			ul {
+
+				li {
+
+					&::before {
+						content: unset;
+					}
+				}
+			}
+		}
+
+		form.woocommerce-form.woocommerce-form-login.login {
+			margin: 50px auto;
+		}
+
+		&.logged-in {
+
+			.wp-block-post-content > .wp-block-tfa-row-section {
+				background: $white !important;
+			}
+		}
+
+		.woocommerce-LostPassword.lost_password {
+			float: right;
+		}
+
+		.woocommerce {
+
+			.col-1,
+			.col-2 {
+
+				@include media-breakpoint-down(lg) {
+					width: 100% !important;
+				}
+			}
+		
+			form {
+				
+				&.woocommerce-ResetPassword.lost_reset_password,
+				&.checkout_coupon,
+				&.register,
+				&.login {
+					box-shadow: 0px 15px 30px #1A264A26;
+					background-color: $white;
+					border-radius: 14px;
+					max-width: 550px;
+					padding: 50px;
+					border: 0;
+
+					@include media-breakpoint-down(lg) {
+						max-width: 100% !important;
+					}
+
+					.login-head {
+						position: relative;
+						z-index: 3;
+					}
+				}
+			}
+		}
+
+		.entry-content .row:first-child {
+			padding: 0 !important;
+		}
+	}
+
+	.register-wrap {
+		box-shadow: 0px 15px 30px #1A264A26;
+		background-color: $white;
+		border-radius: 14px;
+		margin-left: 0;		
+	}
+
+	.lost_reset_password {
+
+		input,
+		button,
+		p {
+			width: 100% !important;
+		}
+	}
+
+	.wpgs-lightbox-icon::before {
+		content: url('../../assets/img/svg/zoom-in.svg');
+	}
+
+	label.woocommerce-form__label-for-checkbox {
+		margin-bottom: -4px !important;
+		position: relative;
+		display: block;
+		height: 20px;
+		width: 20px;			
+
+		em {
+			border: 1px solid $text-base;
+			border-radius: 3px;
+			position: absolute;
+			display: block;
+			height: 20px;
+			width: 20px;
+			z-index: 1;		
+
+			&::before,
+			&::after {
+				content:'';
+				position: absolute;
+				bottom: 0;
+			}
+
+			&::before {
+				left: 16px;
+				transform: rotate(-135deg)
+			}
+
+			&::after {
+				left: 4px;
+				transform: rotate(-45deg)
+			}
+		}
+
+		input {
+			margin: 0 !important;
+			position: absolute;
+			cursor: pointer;
+			height: 20px;
+			width: 20px;		
+			opacity: 0;
+			z-index: 2;
+			left: 0;
+
+			&:checked ~ em {
+			
+				&::before {
+					-webkit-animation: dothatopcheck .2s ease 0s forwards;
+					animation: dothatopcheck .2s ease 0s forwards;
+					background-color: $text-base;
+					width: 3px;
+					top: -4px;
+				}
+
+				&::after {
+					-webkit-animation: dothabottomcheck .2s ease 0s forwards;
+					animation: dothabottomcheck .2s ease 0s forwards;
+					background-color: $text-base;
+					width: 3px;
+					top: 5px;
+				}
+			}
+		}
+	}
+
+	span.remember-psw {
+		margin-top: -10px;
+		margin-left: 5px;
+	}
+
+	&.woocommerce-cart {
+
+		.wp-block-woocommerce-cart.alignwide {
+
+			@include media-breakpoint-down(lg) {
+				width: calc(100vw - 80px);
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: calc(100vw - 40px);
+			}
+		}
+	}
+
+	&.woocommerce-checkout {
+
+		.wc-block-checkout {
+		
+			&__form,
+			&__sidebar {
+				box-shadow: 0px 15px 30px #1A264A26;
+				margin-bottom: 70px !important;
+				border-radius: 14px;
+				padding: 50px;
+
+				input:not(.wc-block-components-checkbox__input) {				
+					color: $text-base !important;
+				}
+
+				input[type=checkbox].wc-block-components-checkbox__input {
+					background: transparent !important;
+					border-color: $text-base !important;
+
+					& + svg {
+						fill: $text-base !important;
+					}
+				}
+
+				textarea {
+					border: rgba($text-base, 0.25) solid 1px !important;
+					background: transparent !important;
+					border-radius: 14px !important;
+					color: $text-base !important;
+				}
+			}
+
+			&__payment-method {
+
+				.wc-block-components-radio-control-accordion-option:last-child::after {
+					border: rgba($text-base, 0.25) solid 1px !important;
+					border-radius: 14px !important;
+				}
+			}
+		}
+
+		div[data-template=order-confirmation] h1:not(.h1) {
+			display: none;
+		}
+
+		.wp-block-woocommerce-checkout.alignwide.wc-block-checkout {
+
+			@include media-breakpoint-down(lg) {
+				width: calc(100vw - 80px);
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: calc(100vw - 40px);
+			}
+		}
+	
+		.wc-block-components-sidebar.wc-block-checkout__sidebar.wp-block-woocommerce-checkout-totals-block {
+
+			@include media-breakpoint-down(lg) {
+				padding: 50px 15px;
+			}
+		}
+	}
+
+	&.woocommerce-page {
+
+		.product div.images {
+			width: 94%;
+
+			.zoomtoo-container {
+				height: 400px;
+			
+				img {
+					width: 100% !important;
+					height: 100% !important;
+					object-fit: cover;
+					width: auto;
+				}
+			}
+		}
+
+		.flaticon-right-arrow,
+		.flaticon-back {
+			top: calc(100% + 15px);
+		}
+
+		.slick-dots {
+			bottom: -54px;
+
+			li button::before {
+				background-color: $orange;
+				color: $orange;
+			}
+		}
+
+		.wpgs--without-images {
+
+			.slick-dots {
+				display: none !important;
+			}
+		}
+
+		.wp-block-post-excerpt {
+			display: inline-block;
+			margin: 30px 0;
+		}
+
+		form.cart {
+			
+			button[name=add-to-cart] {
+				background-color: $orange;
+				border-color: $orange;
+				border-radius: 35px;
+				padding: 15px 45px;
+				box-shadow: none;
+				color: $white;
+				border: 0;
+
+				&:hover {
+					background-color: rgba($orange,0.7);
+				}
+			}
+		}
+
+		ul.slick-dots {
+
+			li::before {
+				content: unset;
+			}
+		}
+	}
+
+	.wc-block-components-order-summary .wc-block-components-order-summary-item__quantity {
+		border-width: 1px;
+		padding: 2px 5px;
+
+		span {
+			font-size: 12px;
+		}
+	}
+
+	&:not(.woocommerce-shop) {
+
+		.woo-filter {
+
+			.wpc-filter-layout-submit-button {
+				pointer-events: none;
+				opacity: 0.4;
+			}
+		
+			.wpc-filters-section {
+
+				&.wpc-filter-product_cat {
+
+					&:not(.wpc-filter-has-selected) {
+
+						&::after {
+							content:'* Please choose vehicle type!';
+							font-size: 14px;
+							padding-left: 15px;
+							color: $red;
+						}
+					}
+				}
+
+				&.wpc-filter-pa_assistance-at-home-address {
+
+					&:not(.wpc-filter-has-selected) {
+
+						&::after {
+							content:'* Please choose assistance option!';
+							font-size: 14px;
+							padding-left: 15px;
+							color: $red;
+						}
+					}
+
+					&.wpc-filter-has-selected {
+
+						& + .wpc-filter-layout-submit-button {
+							pointer-events: all;
+							opacity: unset;
+						}
+					}
+				}
+			}
+		}
+	}
+}
